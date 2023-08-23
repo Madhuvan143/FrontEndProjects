@@ -1,0 +1,17 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: #000;
+    color: white;
+}
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 90px;
+    font-weight: bold;
+    white-space: nowrap;
+}

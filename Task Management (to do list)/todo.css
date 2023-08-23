@@ -1,0 +1,79 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family:cursive;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(120deg, blue,red);
+    padding: 10px;
+}
+.todo{
+    width:100%;
+    max-width: 500px;
+    background-color: #fff;
+    margin: 100px auto;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+h2{
+    color: #002765;
+    display: flex;
+   
+    align-items: center;
+    margin-bottom: 20px;
+}
+h2 img{
+    width: 40px;
+    margin-left: 20px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(219, 218, 218);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    border-radius: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(220deg, green, yellow);
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+.list-item {
+    
+    display: flex;
+    justify-content: space-between;
+
+}
+.delete-button {
+   
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+ /* Custom styling for delete button */
+ /* Custom styling of every list item */

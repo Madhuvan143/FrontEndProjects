@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">     
+    <style>
+        body{
+            background-color: aqua;
+        }
+        #box{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        } 
+        div.parent {
+            border-radius: 10px;
+            width: 25vw;
+            height: 40vh;
+            background-color: white;
+            color: black;
+            font-family: Verdana;
+            text-align: center;
+            border: 1px solid white;
+            box-shadow: 0 0 8px 5px #999;
+        }
+        h2 {
+            font-size: 25px;
+            padding-bottom: 20px;
+        }
+        button {
+            border: none;
+            color: #E05D41;
+            border-radius: 30px;
+            background-color: white;
+            font-size: 2rem;
+            margin-top: 40px;
+        }
+        input {
+            text-align: center;
+            border: none;
+            background-color: white;
+            color: black;
+            font-size: large;
+        }
+        input:focus {
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="parent">
+            <h2>Text to Speech</h2>
+            <div>
+                <input type="text" name="" id="" placeholder="Type words to speak">
+            </div>
+            <button onclick="speak()"><i class="bi bi-megaphone"></i></button>
+        </div>
+    </div>
+    <script>
+        function speak() {
+            let text = document.querySelector('input').value;
+            if(text==""){
+                alert("Type the text to get audio");
+            }
+            let speak = new SpeechSynthesisUtterance(text);//SpeechSynthesisUtterance object represents a speech request that can be passed to the speech synthesis engine.
+            speechSynthesis.speak(speak);//speak method of the speechSynthesis object, passing the speak object as an argument
+        }
+
+    </script>
+</body>
+
+</html>

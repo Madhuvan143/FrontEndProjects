@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+       
+        #box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: antiquewhite;
+            width: 320px;
+            height: auto;
+            border-radius: 15px;
+        }
+        .container{
+            text-align: center;
+            padding: 20px;
+        }
+        .container input{
+            width: 100%;
+            margin-bottom: 10px;
+            height: 50px;
+            text-align: end;
+            font-size: 2em;
+            border-radius: 10px;
+            border: none;
+            background-color:rgb(220, 228, 228);
+            color:black;
+        }
+        
+        input:hover{
+            background-color: rgb(117, 117, 226);
+            color: white;
+        }
+        button{
+            width: 65px;
+            height: 40px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: beige;
+            border: none;
+        }
+        button:hover{
+            background-color: azure;
+        }
+        .row{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        
+        .row1{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            
+        }
+        .row1 button{
+            width: 90px;
+            height: 40px;
+        }
+        h2{
+            margin:0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(26, 25, 25);
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="container">
+            <h2>Calculator</h2>
+            <div class="numberbox">
+        <input type="text" id="result" oninput="textarea(this)">
+    </div>
+        <div class="row">
+        <button onclick="clearResult('')">C</button>
+        <button onclick="delete1()">xl</button>
+        <button onclick="appendToResult('%')">%</button>
+        <button onclick="appendToResult('/')">/</button>
+        </div>
+        <div class="row">
+        <button onclick="appendToResult('7')">7</button>
+        <button onclick="appendToResult('8')">8</button>
+        <button onclick="appendToResult('9')">9</button>
+        <button onclick="appendToResult('*')">*</button>
+        </div>
+        <div class="row">
+        <button onclick="appendToResult('4')">4</button>
+        <button onclick="appendToResult('5')">5</button>
+        <button onclick="appendToResult('6')">6</button>
+        <button onclick="appendToResult('-')">-</button>
+        </div>
+        <div class="row">
+        <button onclick="appendToResult('1')">1</button>
+        <button onclick="appendToResult('2')">2</button>
+        <button onclick="appendToResult('3')">3</button>
+        <button onclick="appendToResult('+')">+</button>
+        </div>
+        <div class="row1">
+        <button onclick="appendToResult('0')">0</button>
+        <button onclick="appendToResult('.')">.</button>
+        <button onclick="calculateResult()">=</button>
+        </div>
+        </div>
+    </div>
+    <script>
+        function appendToResult(value) {
+            document.getElementById('result').value += value;
+        }
+        function textarea(input){
+            input.value = input.value.replace(/[^0-9+\-*/%.]/g, '');
+        }
+        function calculateResult() {
+      let result = eval(document.getElementById('result').value);
+      document.getElementById('result').value = result;
+    }
+        function clearResult() {
+        document.getElementById('result').value = '';
+        }
+        function delete1() {
+        let input = document.getElementById('result');
+        let currentValue = input.value;
+        input.value = currentValue.slice(0, -1); // Remove the last character
+    }
+    </script>
+</body>
+</html>
